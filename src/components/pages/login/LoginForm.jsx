@@ -1,32 +1,32 @@
 import { useState } from "react";
 
-export default function LoginPage() { 
-    const [username, setUsername] = useState("")
+export default function LoginForm() {
+  const [username, setUsername] = useState("");
 
   const handleChange = (e) => {
     setUsername(e.target.value);
-  }
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     alert(`Hello ${username}`);
     setUsername("");
-  }
+  };
 
   return (
-    <div>
+    <form onSubmit={handleSubmit}>
       <h1>Welcome to our store!</h1>
+      <br />
+      <h2>Log in</h2>
 
-      <form onSubmit={handleSubmit}>
-        <h2>Log in</h2>
-
-        <input
+      <input
         type="text"
         placeholder="Enter your name"
+        value={username}
         onChange={handleChange}
-        required />
-        <button type="submit">Access to your account</button>
-      </form>
-    </div>
-  )
+        required
+      />
+      <button type="submit">Access to your account</button>
+    </form>
+  );
 }
