@@ -1,12 +1,16 @@
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function ErrorPage() {
+  let navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate("/");
+  };
+
   return (
     <div>
       <h1>ErrorPage</h1>
-      <Link to={"/"}>
-        <button>Return to home page</button>
-      </Link>
+      <button onClick={handleClick}>Return to home page</button>
     </div>
   );
 }
