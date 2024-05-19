@@ -2,12 +2,12 @@ import { useParams } from "react-router-dom";
 import ButtonReturn from "../../ButtonReturn";
 
 export default function OrderPage() {
-  let urlParams = useParams();
+  const { username } = useParams();
 
   return (
     <div>
-      <h1>Hello {urlParams.name}</h1>
-      <ButtonReturn message={"Log out"} />
+      <h1>Hello {username}</h1>
+      <ButtonReturn text={"Log out"} />
     </div>
   );
 }
