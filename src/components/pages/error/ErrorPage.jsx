@@ -1,16 +1,10 @@
-import { useNavigate } from "react-router-dom";
+import ButtonReturn from "../../ButtonReturn";
 
 export default function ErrorPage() {
-  let navigate = useNavigate();
-
-  const handleClick = () => {
-    navigate("/");
-  };
-
   return (
     <div>
       <h1>ErrorPage</h1>
-      <button onClick={handleClick}>Return to home page</button>
+      <ButtonReturn message={"Return to Login form"} />
     </div>
   );
 }
