@@ -1,5 +1,11 @@
+import { useParams } from "react-router-dom";
+
 export default function OrderPage() {
+  let urlParams = useParams();
+  
   return (
-    <div>OrderPage</div>
-  )
+    <div>
+      <h1>Hello {urlParams.name}</h1>
+    </div>
+  );
 }
