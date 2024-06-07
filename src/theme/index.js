@@ -57,7 +57,7 @@ const weights = {
   heavy: 800,
 }
 
-export const theme = {
+const theme = {
   colors,
   fonts,
   gridUnit,
@@ -66,3 +66,5 @@ export const theme = {
   weights,
   spacing,
 }
+
+export default theme;
