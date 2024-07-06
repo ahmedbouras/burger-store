@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { IoPersonCircleOutline } from "react-icons/io5";
+import { MdArrowForwardIos } from "react-icons/md";
 
 export default function LoginForm() {
   const [username, setUsername] = useState("");
@@ -14,7 +15,7 @@ export default function LoginForm() {
   const handleSubmit = (e) => {
     e.preventDefault();
     setUsername("");
-    navigate(`/order/${username}`)
+    navigate(`/order/${username}`);
   };
 
   return (
@@ -26,22 +27,25 @@ export default function LoginForm() {
       <div className="input-container">
         <IoPersonCircleOutline className="person-circle" />
         <input
-        type="text"
-        placeholder="Enter your name"
-        value={username}
-        onChange={handleChange}
-        required
-      />
+          type="text"
+          placeholder="Enter your name"
+          value={username}
+          onChange={handleChange}
+          required
+        />
       </div>
-      <button type="submit">Access to your account</button>
+      <button type="submit">
+        <span>Access to your account</span>
+        <MdArrowForwardIos className="arrow-btn" />
+      </button>
     </FormStyled>
   );
 }
 
 const FormStyled = styled.form`
-display: flex;
-flex-direction: column;
-padding-top: 60px;
+  display: flex;
+  flex-direction: column;
+  padding-top: 60px;
   color: white;
   text-align: center;
 
@@ -51,7 +55,7 @@ padding-top: 60px;
   }
 
   hr {
-    border: 1px solid #F56A2C;
+    border: 1px solid #f56a2c;
     width: 400px;
     margin-top: 32px;
     margin-bottom: 40px;
@@ -74,7 +78,7 @@ padding-top: 60px;
   }
 
   .person-circle {
-    color: #747B91;
+    color: #747b91;
   }
 
   input {
@@ -85,6 +89,9 @@ padding-top: 60px;
   }
 
   button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     cursor: pointer;
     width: 400px;
     height: 55px;
@@ -92,5 +99,17 @@ padding-top: 60px;
     color: white;
     border-radius: 5px;
     border: 1px solid orange;
+    &:hover {
+      color: #f56a2c;
+      background-color: white;
+    }
+    &:active {
+      background-color: orange;
+      color: white;
+    }
   }
-`
+
+  .arrow-btn {
+    margin-left: 8px;
+  }
+`;
