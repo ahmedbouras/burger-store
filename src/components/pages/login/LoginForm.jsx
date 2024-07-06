@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
+import { IoPersonCircleOutline } from "react-icons/io5";
 
 export default function LoginForm() {
   const [username, setUsername] = useState("");
@@ -22,8 +23,8 @@ export default function LoginForm() {
       <hr />
       <h2>Log in</h2>
 
-      <div>
-      {/* <IoPersonCircleOutline /> */}
+      <div className="input-container">
+        <IoPersonCircleOutline className="person-circle" />
         <input
         type="text"
         placeholder="Enter your name"
@@ -61,12 +62,25 @@ padding-top: 60px;
     font-weight: 700;
   }
 
-  input {
+  .input-container {
+    display: flex;
+    align-items: center;
     width: 400px;
     height: 55px;
     margin: 18px 0;
+    padding: 18px 24px;
+    background-color: white;
     border-radius: 5px;
-    border: 1px solid white;
+  }
+
+  .person-circle {
+    color: #747B91;
+  }
+
+  input {
+    width: 100%;
+    margin-left: 12px;
+    border: none;
     outline: none;
   }
 
