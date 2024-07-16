@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { IoPersonCircleOutline } from "react-icons/io5";
 import { MdArrowForwardIos } from "react-icons/md";
 import theme from "../../../theme";
+import TextInput from "../../reusable-ui/TextInput";
 
 export default function LoginForm() {
   const [username, setUsername] = useState("");
@@ -25,16 +26,15 @@ export default function LoginForm() {
       <hr />
       <h2>Log in</h2>
 
-      <div className="input-container">
-        <IoPersonCircleOutline className="person-circle" />
-        <input
-          type="text"
-          placeholder="Enter your name"
-          value={username}
-          onChange={handleChange}
-          required
-        />
-      </div>
+      <TextInput
+        value={username}
+        onChange={handleChange}
+        type={"text"}
+        placeholder={"Enter your name"}
+        required
+        Icon={<IoPersonCircleOutline className="person-circle" />}
+      />
+
       <button type="submit">
         <span>Access to your account</span>
         <MdArrowForwardIos className="arrow-btn" />
@@ -67,26 +67,8 @@ const LoginFormStyled = styled.form`
     font-weight: ${theme.fonts.weights.bold};
   }
 
-  .input-container {
-    display: flex;
-    align-items: center;
-    width: 400px;
-    height: 55px;
-    margin: 18px 0;
-    padding: 18px 24px;
-    background-color: ${theme.colors.white};
-    border-radius: ${theme.borderRadius.round};
-  }
-
   .person-circle {
     color: ${theme.colors.greyBlue};
-  }
-
-  input {
-    width: 100%;
-    margin-left: ${theme.spacing.sm};
-    border: none;
-    outline: none;
   }
 
   button {
