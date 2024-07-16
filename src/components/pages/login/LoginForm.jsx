@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { IoPersonCircleOutline } from "react-icons/io5";
 import { MdArrowForwardIos } from "react-icons/md";
+import theme from "../../../theme";
 
 export default function LoginForm() {
   const [username, setUsername] = useState("");
@@ -46,24 +47,24 @@ const FormStyled = styled.form`
   display: flex;
   flex-direction: column;
   padding-top: 60px;
-  color: white;
+  color: ${theme.colors.white};
   text-align: center;
 
   h1 {
-    font-size: 48px;
-    font-weight: 700;
+    font-size: ${theme.fonts.size.P5};
+    font-weight: ${theme.fonts.weights.bold};
   }
 
   hr {
-    border: 1px solid #f56a2c;
+    border: 1px solid ${theme.colors.hrline};
     width: 400px;
-    margin-top: 32px;
+    margin-top: ${theme.spacing.lg};
     margin-bottom: 40px;
   }
 
   h2 {
-    font-size: 36px;
-    font-weight: 700;
+    font-size: ${theme.fonts.size.P4};
+    font-weight: ${theme.fonts.weights.bold};
   }
 
   .input-container {
@@ -73,17 +74,17 @@ const FormStyled = styled.form`
     height: 55px;
     margin: 18px 0;
     padding: 18px 24px;
-    background-color: white;
-    border-radius: 5px;
+    background-color: ${theme.colors.white};
+    border-radius: ${theme.borderRadius.round};
   }
 
   .person-circle {
-    color: #747b91;
+    color: ${theme.colors.greyBlue};
   }
 
   input {
     width: 100%;
-    margin-left: 12px;
+    margin-left: ${theme.spacing.sm};
     border: none;
     outline: none;
   }
@@ -95,21 +96,21 @@ const FormStyled = styled.form`
     cursor: pointer;
     width: 400px;
     height: 55px;
-    background-color: orange;
-    color: white;
-    border-radius: 5px;
-    border: 1px solid orange;
+    background-color: ${theme.colors.primary};
+    color: ${theme.colors.white};
+    border-radius: ${theme.borderRadius.round};
+    border: 1px solid ${theme.colors.primary};
     &:hover {
-      color: #f56a2c;
-      background-color: white;
+      color: ${theme.colors.primary};
+      background-color: ${theme.colors.white};
     }
     &:active {
-      background-color: orange;
-      color: white;
+      background-color: ${theme.colors.primary};
+      color: ${theme.colors.white};
     }
   }
 
   .arrow-btn {
-    margin-left: 8px;
+    margin-left: ${theme.spacing.xs};
   }
 `;

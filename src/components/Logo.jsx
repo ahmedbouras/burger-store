@@ -19,13 +19,13 @@ const LogoContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   width: 680px;
-  color: ${theme.colors.primary};
+  color: ${theme.colors.primary_burger};
   text-transform: uppercase;
 
   .logo-text {
     font-family: "Amatic SC", sans-serif;
     font-size: 110px;
-    font-weight: 700;
+    font-weight: ${theme.fonts.weights.bold};
   }
 
   img {
