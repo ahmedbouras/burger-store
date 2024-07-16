@@ -20,7 +20,7 @@ export default function LoginForm() {
   };
 
   return (
-    <FormStyled onSubmit={handleSubmit}>
+    <LoginFormStyled onSubmit={handleSubmit}>
       <h1>Welcome to our store!</h1>
       <hr />
       <h2>Log in</h2>
@@ -39,11 +39,11 @@ export default function LoginForm() {
         <span>Access to your account</span>
         <MdArrowForwardIos className="arrow-btn" />
       </button>
-    </FormStyled>
+    </LoginFormStyled>
   );
 }
 
-const FormStyled = styled.form`
+const LoginFormStyled = styled.form`
   display: flex;
   flex-direction: column;
   padding-top: 60px;

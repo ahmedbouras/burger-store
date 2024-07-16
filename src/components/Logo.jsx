@@ -4,17 +4,17 @@ import theme from "../theme/index";
 
 export default function Logo() {
   return (
-    <LogoContainer>
+    <LogoStyled>
       <div className="logo-text">Crazee</div>
       <div>
         <img src={LogoImage} alt="burger logo" />
       </div>
       <div className="logo-text">Burger</div>
-    </LogoContainer>
+    </LogoStyled>
   );
 }
 
-const LogoContainer = styled.div`
+const LogoStyled = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;

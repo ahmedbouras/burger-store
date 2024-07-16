@@ -5,14 +5,14 @@ import Logo from "../../Logo";
 
 export default function LoginPage() {
   return (
-    <Container>
+    <LoginPageStyled>
       <Logo />
       <LoginForm />
-    </Container>
+    </LoginPageStyled>
   );
 }
 
-const Container = styled.div`
+const LoginPageStyled = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
