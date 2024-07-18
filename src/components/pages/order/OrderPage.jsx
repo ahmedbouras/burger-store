@@ -1,5 +1,4 @@
 import { useParams } from "react-router-dom";
-import ButtonReturn from "../../ButtonReturn";
 import styled from "styled-components";
 import theme from "../../../theme";
 import Navbar from "../../reusable-ui/Navbar";
@@ -11,10 +10,8 @@ export default function OrderPage() {
   return (
     <OrderPageStyled>
       <div className="container">
-        <Navbar />
+        <Navbar username={username} />
         <Main />
-        {/* <h1>Hello {username}</h1>
-        <ButtonReturn text={"Log out"} /> */}
       </div>
     </OrderPageStyled>
   );

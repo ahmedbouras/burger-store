@@ -1,5 +1,69 @@
-export default function Navbar() {
+import styled from "styled-components";
+import Logo from "../reusable-ui/Logo";
+import theme from "../../theme";
+import { IoPersonCircleOutline } from "react-icons/io5";
+
+export default function Navbar({ username }) {
   return (
-    <div>Navbar</div>
-  )
+    <NavbarStyled>
+      <Logo />
+      <div className="profile-container">
+        <div className="welcome">
+          <p>
+            Hey, <span>{username}</span>
+          </p>
+          <a href="">Log out</a>
+        </div>
+        <IoPersonCircleOutline className="icon" />
+      </div>
+    </NavbarStyled>
+  );
 }
+
+const NavbarStyled = styled.nav`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0 70px 0 20px;
+  background-color: ${theme.colors.white};
+  border-radius: 15px 15px 0 0;
+
+  .profile-container {
+    display: flex;
+    align-items: center;
+  }
+
+  .welcome {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    color: ${theme.colors.greyBlue};
+  }
+
+  span {
+    color: ${theme.colors.primary};
+    font-weight: ${theme.fonts.weights.bold};
+  }
+
+  a {
+    font-size: ${theme.fonts.size.XXS};
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
+    &:visited {
+      color: ${theme.colors.greyBlue};
+    }
+  }
+
+  .icon {
+    height: 36px;
+    width: 36px;
+    color: ${theme.colors.greyBlue};
+    margin-left: 10px;
+  }
+`;
