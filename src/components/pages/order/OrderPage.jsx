@@ -18,10 +18,14 @@ export default function OrderPage() {
 }
 
 const OrderPageStyled = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: ${theme.colors.primary};
   height: 100vh;
 
   .container {
     width: 1500px;
+    height: 95vh;
   }
 `;
