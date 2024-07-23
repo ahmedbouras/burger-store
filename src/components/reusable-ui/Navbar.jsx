@@ -7,8 +7,8 @@ export default function Navbar({ username }) {
   return (
     <NavbarStyled>
       <Logo />
-      <div className="profile-container">
-        <div className="welcome">
+      <div className="right-side">
+        <div className="profile">
           <p>
             Hey, <span>{username}</span>
           </p>
@@ -24,17 +24,17 @@ const NavbarStyled = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
+  height: 10vh;
   padding: 0 70px 0 20px;
   background-color: ${theme.colors.white};
   border-radius: 15px 15px 0 0;
 
-  .profile-container {
+  .right-side {
     display: flex;
     align-items: center;
   }
 
-  .welcome {
+  .profile {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
