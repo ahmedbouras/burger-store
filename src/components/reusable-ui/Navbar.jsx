@@ -28,6 +28,8 @@ const NavbarStyled = styled.nav`
   padding: 0 70px 0 20px;
   background-color: ${theme.colors.white};
   border-radius: 15px 15px 0 0;
+  border-top-left-radius: ${theme.borderRadius.extraRound};
+  border-top-right-radius: ${theme.borderRadius.extraRound};
 
   .right-side {
     display: flex;

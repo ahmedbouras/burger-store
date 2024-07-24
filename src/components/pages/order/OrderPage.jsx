@@ -25,6 +25,7 @@ const OrderPageStyled = styled.div`
   height: 100vh;
 
   .container {
+    border-radius: ${theme.borderRadius.extraRound};
     display: flex;
     flex-direction: column;
     width: 1500px;
