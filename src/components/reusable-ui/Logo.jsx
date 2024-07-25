@@ -2,9 +2,9 @@ import styled from "styled-components";
 import LogoImage from "../../assets/F03-logo-orange.png";
 import theme from "../../theme";
 
-export default function Logo({ className }) {
+export default function Logo({ className, onClick }) {
   return (
-    <LogoStyled className={className}>
+    <LogoStyled className={className} onClick={onClick}>
       <div className="logo-text">Crazee</div>
       <div>
         <img src={LogoImage} alt="burger logo" />
@@ -17,7 +17,7 @@ export default function Logo({ className }) {
 const LogoStyled = styled.div`
   display: flex;
   align-items: center;
-  
+
   .logo-text {
     color: ${theme.colors.primary_burger};
     font-family: "Amatic SC", sans-serif;
