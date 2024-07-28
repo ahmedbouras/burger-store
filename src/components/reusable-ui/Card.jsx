@@ -1,20 +1,18 @@
 import styled from "styled-components";
-import BurgerSmokeBBQ from "../../../public/images/burger-bacon-egg.png";
 import theme from "../../theme";
 import PrimaryButton from "./PrimaryButton";
 
-export default function Card() {
+export default function Card({ image, title, price }) {
   return (
     <CardStyled>
-      <div className="product-img">
-        <img src={BurgerSmokeBBQ} alt="" />
-      </div>
+      <img src={image} alt="product image" />
+      <div className="product-img"></div>
 
       <div className="product-info">
-        <h3 className="product-name">Burger Smoke BBQ</h3>
+        <h3 className="product-name">{title}</h3>
 
         <div className="product-purchase">
-          <p className="product-price">5,60 $</p>
+          <p className="product-price">{price} $</p>
 
           <PrimaryButton
             label={"Add to Cart"}
@@ -38,7 +36,8 @@ const CardStyled = styled.div`
   border-radius: ${theme.borderRadius.extraRound};
   box-shadow: -8px 8px 20px 0px rgba(0, 0, 0, 0.2);
 
-  .product-img {
+  img {
+    object-fit: contain;
     width: 200px;
     height: 145px;
   }
@@ -46,19 +45,24 @@ const CardStyled = styled.div`
   .product-info {
     width: 200px;
     height: 110px;
+    margin-top: 15px;
     padding: 0 5px 5px 5px;
 
     .product-name {
       font-size: ${theme.fonts.size.P4};
       font-weight: ${theme.fonts.weights.bold};
-      text-align: center;
-      width: 100%;
+      text-align: left;
+      width: 190px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
     }
 
     .product-purchase {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      margin-top: -5px;
       height: 66px;
 
       .product-price {

@@ -1,21 +1,20 @@
 import styled from "styled-components";
 import theme from "../../../theme";
 import Card from "../../reusable-ui/Card";
+import { fakeMenu } from "../../../fakeData/fakeMenu";
+import { useState } from "react";
 
 export default function Main() {
+  const [products, setProducts] = useState(fakeMenu);
+
   return (
     <MainStyled>
       <div className="card-container">
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
+        {products.map(product => (
+          <Card image={product.imageSource}
+          title={product.title}
+          price={product.price} />
+        ))}
       </div>
     </MainStyled>
   );
