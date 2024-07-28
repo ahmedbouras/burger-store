@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import theme from "../../theme";
 import PrimaryButton from "./PrimaryButton";
+import { round } from "../../utils/math";
 
 export default function Card({ image, title, price }) {
   return (
@@ -12,7 +13,7 @@ export default function Card({ image, title, price }) {
         <h3 className="product-name">{title}</h3>
 
         <div className="product-purchase">
-          <p className="product-price">{price} $</p>
+          <p className="product-price">{round(price)} $</p>
 
           <PrimaryButton
             label={"Add to Cart"}
