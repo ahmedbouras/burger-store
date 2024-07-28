@@ -40,6 +40,7 @@ export default function LoginForm() {
         type={"submit"}
         label={"Access to your account"}
         Icon={<MdArrowForwardIos className="arrow-btn" />}
+        className={"form-button"}
       />
     </LoginFormStyled>
   );
@@ -71,6 +72,11 @@ const LoginFormStyled = styled.form`
 
   .person-circle {
     color: ${theme.colors.greyBlue};
+  }
+
+  .form-button {
+    width: 400px;
+    height: 55px;
   }
 
   .arrow-btn {

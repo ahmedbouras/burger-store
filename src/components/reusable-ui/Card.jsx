@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import BurgerSmokeBBQ from "../../../public/images/burger-bacon-egg.png";
 import theme from "../../theme";
+import PrimaryButton from "./PrimaryButton";
 
 export default function Card() {
   return (
@@ -14,9 +15,12 @@ export default function Card() {
 
         <div className="product-purchase">
           <p className="product-price">5,60 $</p>
-          <button type="button" className="product-action">
-            Add
-          </button>
+
+          <PrimaryButton
+            label={"Add to Cart"}
+            type={"button"}
+            className={"product-button"}
+          />
         </div>
       </div>
     </CardStyled>
@@ -59,6 +63,11 @@ const CardStyled = styled.div`
 
       .product-price {
         color: ${theme.colors.primary};
+      }
+
+      .product-button {
+        width: 95px;
+        height: 38px;
       }
     }
   }
