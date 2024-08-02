@@ -10,10 +10,13 @@ export default function Main() {
   return (
     <MainStyled>
       <div className="card-container">
-        {products.map(product => (
-          <Card image={product.imageSource}
-          title={product.title}
-          price={product.price} />
+        {products.map((product) => (
+          <Card
+            key={product.id}
+            image={product.imageSource}
+            title={product.title}
+            price={product.price}
+          />
         ))}
       </div>
     </MainStyled>
@@ -35,7 +38,8 @@ const MainStyled = styled.div`
 
   .card-container {
     display: grid;
+    //j-c: center; +  repeat(4, 1fr)
     grid-template-columns: repeat(4, 240px);
-    gap: 60px 85px;
+    gap: 60px 85px; // delete 85px
   }
 `;
