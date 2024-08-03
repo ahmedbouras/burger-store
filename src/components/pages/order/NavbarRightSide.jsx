@@ -1,12 +1,19 @@
 import styled from "styled-components";
-import theme from "../../../theme";
 import ToggleButton from "../../reusable-ui/ToggleButton";
 import Profile from "./Profile";
+import { useState } from "react";
 
 export default function NavbarRightSide({ username }) {
+  const [toggle, setToggle] = useState(false);
+
   return (
     <NavbarRightSideStyled>
-      <ToggleButton />
+      <ToggleButton
+      isChecked={toggle}
+      onToggle={() => setToggle(!toggle)}
+      labelIfChecked="Disable Admin mode"
+      labelIfUnchecked="Enable Admin mode"
+      />
       <Profile username={username} />
     </NavbarRightSideStyled>
   );
