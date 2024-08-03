@@ -2,10 +2,12 @@ import styled from "styled-components";
 import theme from "../../../theme";
 import { IoPersonCircleOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
+import ToggleButton from "../../reusable-ui/ToggleButton";
 
 export default function NavbarRightSide({ username }) {
   return (
     <NavbarRightSideStyled>
+      <ToggleButton />
       <div className="profile">
         <p>
           Hey, <span>{username}</span>
