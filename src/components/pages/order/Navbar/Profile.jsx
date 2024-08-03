@@ -1,27 +1,28 @@
-import styled from "styled-components";
-import theme from "../../../theme";
 import { IoPersonCircleOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
+import styled from "styled-components";
+import theme from "../../../../theme";
 
-export default function NavbarRightSide({ username }) {
+export default function ({ username }) {
   return (
-    <NavbarRightSideStyled>
-      <div className="profile">
+    <ProfileStyled>
+      <div className="profile-info">
         <p>
           Hey, <span>{username}</span>
         </p>
         <Link to="/">Log out</Link>
       </div>
       <IoPersonCircleOutline className="icon" />
-    </NavbarRightSideStyled>
+    </ProfileStyled>
   );
 }
 
-const NavbarRightSideStyled = styled.div`
+const ProfileStyled = styled.div`
   display: flex;
   align-items: center;
+  padding-left: 50px;
 
-  .profile {
+  .profile-info {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
