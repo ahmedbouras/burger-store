@@ -1,10 +1,10 @@
 import styled from "styled-components";
-import ToggleButton from "../../reusable-ui/ToggleButton";
+import ToggleButton from "../../../reusable-ui/ToggleButton";
 import Profile from "./Profile";
 import { useEffect, useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import theme from "../../../theme";
+import theme from "../../../../theme";
 
 export default function NavbarRightSide({ username }) {
   const [toggle, setToggle] = useState(false);
