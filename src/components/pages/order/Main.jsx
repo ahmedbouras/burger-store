@@ -24,11 +24,8 @@ export default function Main() {
 }
 
 const MainStyled = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-top: 50px;
-  padding-bottom: 50px;
+  display: grid;
+  grid-template-columns: 1fr;
   flex: 1;
   background-color: ${theme.colors.background_white};
   box-shadow: 0px 8px 20px 8px rgba(0, 0, 0, 0.2) inset;
@@ -44,8 +41,9 @@ const MainStyled = styled.div`
 
   .card-container {
     display: grid;
-    //j-c: center; +  repeat(4, 1fr)
+    justify-content: center;
     grid-template-columns: repeat(4, 240px);
     gap: 60px 85px; // delete 85px
+    padding: 50px;
   }
 `;

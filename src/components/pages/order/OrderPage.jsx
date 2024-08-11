@@ -28,7 +28,7 @@ const OrderPageStyled = styled.div`
     border-radius: ${theme.borderRadius.extraRound};
     display: flex;
     flex-direction: column;
-    width: 1500px;
+    width: 1400px;
     height: 95vh;
   }
 `;
