@@ -34,7 +34,13 @@ const MainStyled = styled.div`
   box-shadow: 0px 8px 20px 8px rgba(0, 0, 0, 0.2) inset;
   border-bottom-left-radius: ${theme.borderRadius.extraRound};
   border-bottom-right-radius: ${theme.borderRadius.extraRound};
+  -ms-overflow-style: none; /* for Internet Explorer, Edge */
+  scrollbar-width: none; /* for Firefox */
   overflow-y: scroll;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 
   .card-container {
     display: grid;
