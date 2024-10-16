@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import theme from "../../../theme";
-import Card from "../../reusable-ui/Card";
-import { fakeMenu } from "../../../fakeData/fakeMenu";
+import theme from "../../../../theme";
+import Card from "../../../reusable-ui/Card";
+import { fakeMenu } from "../../../../fakeData/fakeMenu";
 import { useState } from "react";
 
 export default function Main() {
