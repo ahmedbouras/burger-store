@@ -3,6 +3,7 @@ import theme from "../../../../theme";
 import Card from "../../../reusable-ui/Card";
 import { fakeMenu } from "../../../../fakeData/fakeMenu";
 import { useState } from "react";
+import Admin from "./Admin/Admin";
 
 export default function Main() {
   const [products, setProducts] = useState(fakeMenu);
@@ -21,7 +22,7 @@ export default function Main() {
             />
           ))}
         </div>
-        <div className="admin">Admin</div>
+        <Admin />
       </div>
     </MainStyled>
   );
@@ -33,11 +34,9 @@ const MainStyled = styled.div`
   /* flex: 1; */
   height: calc(95vh - 10vh);
   background-color: ${theme.colors.background_white};
-  box-shadow: 0px 8px 20px 8px rgba(0, 0, 0, 0.2) inset;
+  box-shadow: ${theme.borderRadius.strong};
   border-bottom-left-radius: ${theme.borderRadius.extraRound};
   border-bottom-right-radius: ${theme.borderRadius.extraRound};
-
-  border: 2px green dashed;
 
   /* .basket {
     background-color: pink;
@@ -59,16 +58,6 @@ const MainStyled = styled.div`
       &::-webkit-scrollbar {
         display: none; // TODO : Verify if it's necessary
       }
-    }
-    .admin {
-      position: absolute;
-      bottom: 0;
-      right: 0;
-      left: 0;
-      background-color: #b8d4ec;
-      height: 250px;
-      border-bottom-left-radius: ${theme.borderRadius.extraRound};
-      border-bottom-right-radius: ${theme.borderRadius.extraRound};
     }
   }
 `;
