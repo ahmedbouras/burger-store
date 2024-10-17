@@ -1,13 +1,14 @@
 import styled from "styled-components";
 import ToggleButton from "../../../reusable-ui/ToggleButton";
 import Profile from "./Profile";
-import { useState } from "react";
+import { useContext } from "react";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import ToastAdmin from "./ToastAdmin";
+import { AdminContext } from "../../../context/AdminProvider";
 
 export default function NavbarRightSide({ username }) {
-  const [isAdmin, setIsAdmin] = useState(false);
+  const { isAdmin, toggleAdminMode } = useContext(AdminContext);
 
   const notifyAdminMode = () => {
     if (!isAdmin) {
@@ -20,9 +21,9 @@ export default function NavbarRightSide({ username }) {
         pauseOnHover: true,
         draggable: true,
         progress: undefined,
-      })
+      });
     }
-    setIsAdmin(!isAdmin)
+    toggleAdminMode();
   };
 
   return (

@@ -3,17 +3,20 @@ import styled from "styled-components";
 import theme from "../../../theme";
 import Navbar from "./Navbar/Navbar";
 import Main from "./Main/Main";
+import AdminProvider from "../../context/AdminProvider";
 
 export default function OrderPage() {
   const { username } = useParams();
 
   return (
-    <OrderPageStyled>
-      <div className="container">
-        <Navbar username={username} />
-        <Main />
-      </div>
-    </OrderPageStyled>
+    <AdminProvider>
+      <OrderPageStyled>
+        <div className="container">
+          <Navbar username={username} />
+          <Main />
+        </div>
+      </OrderPageStyled>
+    </AdminProvider>
   );
 }
 
