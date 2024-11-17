@@ -17,8 +17,8 @@ export default function LoginForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setUsername("");
     navigate(`/order/${username}`);
+    setUsername("");
   };
 
   return (
