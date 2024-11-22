@@ -1,12 +1,20 @@
 import styled from "styled-components";
 import AdminTabs from "./AdminTabs";
 import AdminPanel from "./AdminPanel";
+import { useState } from "react";
 
 export default function Admin() {
-  return <AdminStyled>
-    <AdminTabs/>
-    <AdminPanel/>
-  </AdminStyled>;
+  const [showAdminPanel, setShowAdminPanel] = useState(true);
+
+  return (
+    <AdminStyled>
+      <AdminTabs
+        showAdminPanel={showAdminPanel}
+        setShowAdminPanel={setShowAdminPanel}
+      />
+      {showAdminPanel && <AdminPanel />}
+    </AdminStyled>
+  );
 }
 
 const AdminStyled = styled.div`

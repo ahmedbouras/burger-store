@@ -1,8 +1,12 @@
 import styled from "styled-components";
 import theme from "../../theme/index";
 
-export default function Tab({ Icon }) {
-  return <TabStyled>{Icon}</TabStyled>;
+export default function Tab({ Icon, onClick, className }) {
+  return (
+    <TabStyled onClick={onClick} className={className}>
+      {Icon}
+    </TabStyled>
+  );
 }
 
 const TabStyled = styled.button`
