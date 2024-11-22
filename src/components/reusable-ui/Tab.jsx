@@ -1,17 +1,19 @@
 import styled from "styled-components";
 import theme from "../../theme/index";
 
-export default function Tab({ Icon, onClick, className }) {
+export default function Tab({ Icon, onClick, className, label = null }) {
+  console.log(label);
+
   return (
     <TabStyled onClick={onClick} className={className}>
-      {Icon}
+      <div className="icon">{Icon}</div>
+      {label && <div className="label">{label}</div>}
     </TabStyled>
   );
 }
 
 const TabStyled = styled.button`
   display: flex;
-  justify-content: center;
   align-items: center;
   position: relative;
   top: 1px;
@@ -32,5 +34,16 @@ const TabStyled = styled.button`
 
   &:hover {
     border-bottom: 1px solid ${theme.colors.white};
+  }
+
+  .icon {
+    display: flex;
+    align-items: center;
+  }
+
+  .label {
+    display: flex;
+    justify-content: center;
+    margin-left: 13px;
   }
 `;
