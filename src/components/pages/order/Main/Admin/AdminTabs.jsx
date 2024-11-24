@@ -2,6 +2,7 @@ import styled from "styled-components";
 import Tab from "../../../../reusable-ui/Tab";
 import { FiChevronUp, FiChevronDown } from "react-icons/fi";
 import { AiOutlinePlus } from "react-icons/ai";
+import { MdModeEditOutline } from "react-icons/md";
 import theme from "../../../../../theme";
 
 export default function AdminTabs({ showAdminPanel, setShowAdminPanel }) {
@@ -15,6 +16,12 @@ export default function AdminTabs({ showAdminPanel, setShowAdminPanel }) {
       <Tab
         Icon={<AiOutlinePlus />}
         label={"Add product"}
+        onClick={() => setShowAdminPanel(!showAdminPanel)}
+        className={showAdminPanel ? "" : "hidden-panel"}
+      />
+      <Tab
+        Icon={<MdModeEditOutline />}
+        label={"Edit product"}
         onClick={() => setShowAdminPanel(!showAdminPanel)}
         className={showAdminPanel ? "" : "hidden-panel"}
       />

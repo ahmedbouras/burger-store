@@ -42,8 +42,10 @@ const TabStyled = styled.button`
   }
 
   .label {
-    display: flex;
-    justify-content: center;
     margin-left: 13px;
+    &:hover {
+      border-bottom: 2px solid ${theme.colors.greySemiDark};
+      line-height: 1.5;
+    }
   }
 `;
