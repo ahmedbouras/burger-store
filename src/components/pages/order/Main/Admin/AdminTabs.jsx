@@ -5,7 +5,7 @@ import { AiOutlinePlus } from "react-icons/ai";
 import { MdModeEditOutline } from "react-icons/md";
 import theme from "../../../../../theme";
 
-export default function AdminTabs({ showAdminPanel, setShowAdminPanel }) {
+export default function AdminTabs({ showAdminPanel, setShowAdminPanel, setSelectedTab }) {
   return (
     <AdminTabsStyled>
       <Tab
@@ -16,13 +16,13 @@ export default function AdminTabs({ showAdminPanel, setShowAdminPanel }) {
       <Tab
         Icon={<AiOutlinePlus />}
         label={"Add product"}
-        onClick={() => setShowAdminPanel(!showAdminPanel)}
+        onClick={() => setSelectedTab('addProduct')}
         className={showAdminPanel ? "" : "hidden-panel"}
       />
       <Tab
         Icon={<MdModeEditOutline />}
         label={"Edit product"}
-        onClick={() => setShowAdminPanel(!showAdminPanel)}
+        onClick={() => setSelectedTab('editProduct')}
         className={showAdminPanel ? "" : "hidden-panel"}
       />
     </AdminTabsStyled>

@@ -2,17 +2,26 @@ import styled from "styled-components";
 import AdminTabs from "./AdminTabs";
 import AdminPanel from "./AdminPanel";
 import { useState } from "react";
+import AddProduct from "./AddProduct";
+import EditProduct from "./EditProduct";
 
 export default function Admin() {
   const [showAdminPanel, setShowAdminPanel] = useState(true);
 
+  const [selectedTab, setSelectedTab] = useState('addProduct');
+  const TABS = {
+    'addProduct': <AddProduct />,
+    'editProduct': <EditProduct />
+  }
+  
   return (
     <AdminStyled>
       <AdminTabs
         showAdminPanel={showAdminPanel}
         setShowAdminPanel={setShowAdminPanel}
+        setSelectedTab={setSelectedTab}
       />
-      {showAdminPanel && <AdminPanel />}
+      {showAdminPanel && <AdminPanel selectedTab={selectedTab} />}
     </AdminStyled>
   );
 }

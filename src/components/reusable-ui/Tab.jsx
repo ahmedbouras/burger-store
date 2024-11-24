@@ -2,7 +2,6 @@ import styled from "styled-components";
 import theme from "../../theme/index";
 
 export default function Tab({ Icon, onClick, className, label = null }) {
-  console.log(label);
 
   return (
     <TabStyled onClick={onClick} className={className}>
