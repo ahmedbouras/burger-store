@@ -22,7 +22,7 @@ export default function Admin() {
         selectedTab={selectedTab}
         setSelectedTab={setSelectedTab}
       />
-      {showAdminPanel && <AdminPanel selectedTab={selectedTab} />}
+      {showAdminPanel && <AdminPanel tabs={TABS} selectedTab={selectedTab} />}
     </AdminStyled>
   );
 }
