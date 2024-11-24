@@ -5,25 +5,25 @@ import { AiOutlinePlus } from "react-icons/ai";
 import { MdModeEditOutline } from "react-icons/md";
 import theme from "../../../../../theme";
 
-export default function AdminTabs({ showAdminPanel, setShowAdminPanel, setSelectedTab }) {
+export default function AdminTabs({ showAdminPanel, setShowAdminPanel, selectedTab, setSelectedTab }) {
   return (
     <AdminTabsStyled>
       <Tab
         Icon={showAdminPanel ? <FiChevronDown /> : <FiChevronUp />}
         onClick={() => setShowAdminPanel(!showAdminPanel)}
-        className={showAdminPanel ? "" : "hidden-panel"}
+        className={showAdminPanel ? "" : "dark-tab"}
       />
       <Tab
         Icon={<AiOutlinePlus />}
         label={"Add product"}
         onClick={() => setSelectedTab('addProduct')}
-        className={showAdminPanel ? "" : "hidden-panel"}
+        className={selectedTab === "addProduct" ? "dark-tab" : ""}
       />
       <Tab
         Icon={<MdModeEditOutline />}
         label={"Edit product"}
         onClick={() => setSelectedTab('editProduct')}
-        className={showAdminPanel ? "" : "hidden-panel"}
+        className={selectedTab === "editProduct" ? "dark-tab" : ""}
       />
     </AdminTabsStyled>
   );
@@ -36,7 +36,7 @@ const AdminTabsStyled = styled.div`
     margin-left: 1px;
   }
 
-  .hidden-panel {
+  .dark-tab {
     background-color: ${theme.colors.background_dark};
     color: ${theme.colors.white};
     border-color: ${theme.colors.background_dark};

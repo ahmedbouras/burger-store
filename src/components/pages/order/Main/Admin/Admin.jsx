@@ -19,6 +19,7 @@ export default function Admin() {
       <AdminTabs
         showAdminPanel={showAdminPanel}
         setShowAdminPanel={setShowAdminPanel}
+        selectedTab={selectedTab}
         setSelectedTab={setSelectedTab}
       />
       {showAdminPanel && <AdminPanel selectedTab={selectedTab} />}
