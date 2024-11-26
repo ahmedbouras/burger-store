@@ -5,24 +5,24 @@ import { AiOutlinePlus } from "react-icons/ai";
 import { MdModeEditOutline } from "react-icons/md";
 import theme from "../../../../../theme";
 
-export default function AdminTabs({ showAdminPanel, setShowAdminPanel, selectedTab, setSelectedTab }) {
+export default function AdminTabs({ showAdminPanel, selectedTab, showAdminContent }) {
   return (
     <AdminTabsStyled>
       <Tab
         Icon={showAdminPanel ? <FiChevronDown /> : <FiChevronUp />}
-        onClick={() => setShowAdminPanel(!showAdminPanel)}
+        onClick={() => showAdminContent(!showAdminPanel)}
         className={showAdminPanel ? "" : "dark-tab"}
       />
       <Tab
         Icon={<AiOutlinePlus />}
         label={"Add product"}
-        onClick={() => setSelectedTab('addProduct')}
+        onClick={() => showAdminContent(true, "addProduct")}
         className={selectedTab === "addProduct" ? "dark-tab" : ""}
       />
       <Tab
         Icon={<MdModeEditOutline />}
         label={"Edit product"}
-        onClick={() => setSelectedTab('editProduct')}
+        onClick={() => showAdminContent(true, "editProduct")}
         className={selectedTab === "editProduct" ? "dark-tab" : ""}
       />
     </AdminTabsStyled>

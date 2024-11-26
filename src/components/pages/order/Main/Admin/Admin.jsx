@@ -13,14 +13,18 @@ export default function Admin() {
     'addProduct': <AddProduct />,
     'editProduct': <EditProduct />
   }
+
+  const showAdminContent = (showPanel, tabContent) => {
+    setShowAdminPanel(showPanel);
+    if (tabContent) setSelectedTab(tabContent)
+  }
   
   return (
     <AdminStyled>
       <AdminTabs
         showAdminPanel={showAdminPanel}
-        setShowAdminPanel={setShowAdminPanel}
         selectedTab={selectedTab}
-        setSelectedTab={setSelectedTab}
+        showAdminContent={showAdminContent}
       />
       {showAdminPanel && <AdminPanel tabs={TABS} selectedTab={selectedTab} />}
     </AdminStyled>
