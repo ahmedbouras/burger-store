@@ -8,17 +8,17 @@ import EditProduct from "./EditProduct";
 export default function Admin() {
   const [showAdminPanel, setShowAdminPanel] = useState(true);
 
-  const [selectedTab, setSelectedTab] = useState('addProduct');
+  const [selectedTab, setSelectedTab] = useState("add");
   const TABS = {
-    'addProduct': <AddProduct />,
-    'editProduct': <EditProduct />
-  }
+    add: <AddProduct />,
+    edit: <EditProduct />,
+  };
 
   const showAdminContent = (showPanel, tabContent) => {
     setShowAdminPanel(showPanel);
-    if (tabContent) setSelectedTab(tabContent)
-  }
-  
+    if (tabContent) setSelectedTab(tabContent);
+  };
+
   return (
     <AdminStyled>
       <AdminTabs
