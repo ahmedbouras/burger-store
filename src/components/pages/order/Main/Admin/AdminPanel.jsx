@@ -1,8 +1,9 @@
 import styled from "styled-components";
 import theme from "../../../../../theme";
 
-export default function AdminPanel({tabs, selectedTab}) {
-  return <AdminPanelStyled>{tabs[selectedTab]}</AdminPanelStyled>;
+export default function AdminPanel({content}) {
+
+  return <AdminPanelStyled>{content}</AdminPanelStyled>;
 }
 
 const AdminPanelStyled = styled.div`

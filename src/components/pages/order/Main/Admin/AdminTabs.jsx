@@ -9,8 +9,6 @@ export default function AdminTabs({
   selectedTab,
   showAdminContent,
 }) {
-  const tabs = tabsConfig;
-
   return (
     <AdminTabsStyled>
       <Tab
@@ -18,13 +16,13 @@ export default function AdminTabs({
         onClick={() => showAdminContent(!showAdminPanel)}
         className={showAdminPanel ? "" : "dark-tab"}
       />
-      {tabs.map((tab, index) => (
+      {tabsConfig.map((tab, index) => (
         <Tab
           key={index}
           Icon={tab.icon}
           label={tab.label}
-          onClick={() => showAdminContent(true, tab.id)}
-          className={selectedTab === tab.id ? "dark-tab" : ""}
+          onClick={() => showAdminContent(true, tab.name)}
+          className={selectedTab === tab.name ? "dark-tab" : ""}
         />
       ))}
     </AdminTabsStyled>
